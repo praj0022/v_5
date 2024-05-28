@@ -1,0 +1,20 @@
+---
+title: "A3"
+author: "Pooja"
+format: html
+editor: visual
+---
+
+```{r}
+library(knitr)
+library(tidyverse)
+
+data <- read.csv("bipolar_disorder_prevalence_by_age.csv")
+
+filtered_data <- data |>
+                filter( Code == "AFG") 
+
+ggplot(filtered_data, aes(x = Year, y = Bipolar.disorders..share.of.population....Sex..Both...Age..5.14.years)) + geom_line()
+
+```
+
